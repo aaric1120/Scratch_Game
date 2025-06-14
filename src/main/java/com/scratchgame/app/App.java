@@ -24,5 +24,7 @@ public class App {
         for (String key: test_reward_mat.keySet()) {
             System.out.println(key + " " + test_reward_mat.get(key).get(0));
         }
+
+        System.out.println(test_reward.calculateReward());
     }
 }
