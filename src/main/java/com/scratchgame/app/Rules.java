@@ -5,10 +5,19 @@ import java.util.List;
 import java.util.Map;
 
 public class Rules {
+    @JsonProperty("columns")
     private int columns;
+
+    @JsonProperty("rows")
     private int rows;
+
+    @JsonProperty("symbols")
     private Map<String, SymbolConfig> symbols;
+
+    @JsonProperty("probabilities")
     private Probabilities probabilities;
+
+    @JsonProperty("win_combinations")
     private Map<String, WinCombination> winCombinations;
 
     // Getters and setters
