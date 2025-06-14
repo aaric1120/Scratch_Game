@@ -1,2 +1,10 @@
+com\scratchgame\app\Reward.class
 com\scratchgame\app\App.class
+com\scratchgame\app\GenMatrix.class
+com\scratchgame\app\StandardSymbolProbability.class
+com\scratchgame\app\SymbolConfig.class
+com\scratchgame\app\WinCombination.class
+com\scratchgame\app\BonusSymbols.class
 com\scratchgame\app\Rules.class
+com\scratchgame\app\ConfigParser.class
+com\scratchgame\app\Probabilities.class
