@@ -29,6 +29,14 @@ public class Reward {
         }
     }
 
+    public void checkstraight() {
+
+    }
+
+    public void checkHorizontal() {
+
+    }
+
     public Integer calculateReward(){
         int reward = 0;
         if (winElements.size() == 0) {

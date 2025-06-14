@@ -5,6 +5,8 @@ import java.util.Random;
 
 public class GenMatrix {
     private Rules config;
+    private int row = 0;
+    private int column = 0;
     private HashMap<String, String> final_matrix = new HashMap<>();
 
     private HashMap<String, Integer> element_count = new HashMap<>();
@@ -39,10 +41,19 @@ public class GenMatrix {
         return curr_bonus;
     }
 
+    public int[] getDimensions() {
+        int[] output = {row, column};
+        return output;
+    }
+
     public void generateMatrixElements() {
         // Get the count of special symbols for random selection
         int bonus_symbol = config.getProbabilities().getBonusSymbols().getSymbols().size();
         for (int i = 0; i < config.getProbabilities().getStandardSymbols().size();i++) {
+            // update the column and row values
+            column = Math.max(config.getProbabilities().getStandardSymbols().get(i).getColumn(), column);
+            row = Math.max(config.getProbabilities().getStandardSymbols().get(i).getRow(), row);
+
             // Get Curr row and column
             int row = config.getProbabilities().getStandardSymbols().get(i).getRow();
             int column = config.getProbabilities().getStandardSymbols().get(i).getColumn();
