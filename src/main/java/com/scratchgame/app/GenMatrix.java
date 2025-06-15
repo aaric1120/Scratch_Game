@@ -55,8 +55,8 @@ public class GenMatrix {
             row = Math.max(config.getProbabilities().getStandardSymbols().get(i).getRow(), row);
 
             // Get Curr row and column
-            int row = config.getProbabilities().getStandardSymbols().get(i).getRow();
-            int column = config.getProbabilities().getStandardSymbols().get(i).getColumn();
+            int curr_row = config.getProbabilities().getStandardSymbols().get(i).getRow();
+            int curr_column = config.getProbabilities().getStandardSymbols().get(i).getColumn();
 
             // This is the array to use if the bonus symbol has already appeared once
             int curr_size = config.getProbabilities().getStandardSymbols().get(i).getSymbols().size();
@@ -120,7 +120,7 @@ public class GenMatrix {
                     randomNumber = randomNumber - curr_weight[curr_index];
                     curr_index++;
                 } else {
-                    final_matrix.put(String.format("%s_%s", row, column),curr_ele[curr_index]);
+                    final_matrix.put(String.format("%s:%s", curr_row, curr_column),curr_ele[curr_index]);
                     if (config.getProbabilities().getBonusSymbols().getSymbols().containsKey(curr_ele[curr_index])) {
                         bonusChecked = true;
                         curr_bonus = curr_ele[curr_index];
