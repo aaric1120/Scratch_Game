@@ -6,7 +6,7 @@
 - JDK >= 1.8 (Requirement Met)
 - Maven or Gradle (Requirement Met)
 
-## Optionals ##
+## Optionals Completed ##
 - Checks for Horizontal/Vertical Matches
 - Checks for Diagonal Matches
 - Dynamically finds the row and column, code should be able to work for Matrix of any size as long as the "config.json" is defined correctly
