@@ -3,8 +3,8 @@
 
 ## Requirements ##
 
-- JDK >= 1.8 (Requirement Met)
-- Maven or Gradle (Requirement Met)
+- JDK >= 1.8 (Requirement Met: JDK 11)
+- Maven or Gradle (Requirement Met: Maven)
 
 ## Optionals Completed ##
 - Checks for Horizontal/Vertical Matches
