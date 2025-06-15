@@ -35,7 +35,38 @@ public class Reward {
         checkStraight();
 
         // check for diagoanal lines
-        // checkDiagonal();
+        checkDiagonal();
+    }
+
+    public void finalOutput() {
+        // Showt the matrix
+        System.out.println("matrix: ");
+        for (int i = 0;i <= row;i++) {
+            for (int j = 0; j <= column; j++) {
+                System.out.printf("%s ",matrix_obj.getMatrix().get(String.format("%d:%d",i,j)));
+            }
+            System.out.println();
+        }
+        System.out.println();
+
+        // show the reward
+        System.out.printf("reward:%d\n\n",reward);
+
+        // Show winning combinations and bonus symbol
+        if (reward != 0) {
+            System.out.println("applied_winning_combinations:");
+            for (String key: winElements.keySet()) {
+                System.out.printf("%s:",key);
+                winElements.get(key).forEach(cond -> {
+                    System.out.printf("%s ", cond);
+                });
+                System.out.println();
+            }
+            System.out.println();
+            if (matrix_obj.getCurr_bonus() != null && !matrix_obj.getCurr_bonus().equals("MISS")) {
+                System.out.printf("applied_bonus_symbol:%s\n\n", matrix_obj.getCurr_bonus());
+            }
+        }
     }
 
     public void checkCount() {

@@ -28,32 +28,16 @@ public class App {
             System.exit(1);
         }
 
+        // Generate the matrix
+        GenMatrix output_matrix = new GenMatrix(args[1]);
+        output_matrix.generateMatrixElements();
 
-        GenMatrix temp_test = new GenMatrix(args[1]);
-        temp_test.generateMatrixElements();
-        HashMap<String, String> temp_matrix = temp_test.getMatrix();
+        // Generate logic for calculating reward
+        Reward output_reward = new Reward(output_matrix, args[3]);
+        output_reward.checkWin();
+        output_reward.calculateReward();
 
-        for (int i = 0;i< 3;i++) {
-            for (int j = 0; j < 3; j++) {
-                System.out.printf("%s ",temp_matrix.get(String.format("%d:%d",i,j)));
-            }
-            System.out.println();
-        }
-
-        Reward test_reward = new Reward(temp_test, args[3]);
-        test_reward.checkWin();
-        HashMap<String, ArrayList<String>> test_reward_mat = test_reward.getWinElements();
-        for (String key: test_reward_mat.keySet()) {
-            System.out.printf(key + " : ");
-            test_reward_mat.get(key).stream().forEach(bonus -> {
-                System.out.printf(bonus + " ");
-            });
-            System.out.println();
-
-        }
-
-        test_reward.calculateReward();
-
-        System.out.println(test_reward.getReward());
+        // Final output
+        output_reward.finalOutput();
     }
 }
