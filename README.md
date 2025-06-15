@@ -21,3 +21,9 @@ Example of run command:
 ```bash
  java -jar /my-app/target/my-app-1.0-SNAPSHOT-jar-with-dependencies.jar --config /my-app/config.json --betting-amount 100
 ```
+
+## NOTES ## 
+
+I couldn't find where in the question description it was specified, but I coded the application so that the "bonus symbol" can at most appear once.
+
+
