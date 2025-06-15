@@ -71,10 +71,11 @@ public class Reward {
 
     public void checkCount() {
         for(String key:matrix_obj.getCount().keySet()) {
-            if (matrix_obj.getCount().get(key) > 2) {
+            List<String> check_cond = matrix_obj.getConfig().getWinCombinations().entrySet().stream().filter(entry -> entry.getValue().getCount() != null &&
+                    entry.getValue().getCount() == matrix_obj.getCount().get(key)).map(Map.Entry::getKey).toList();
+            if (check_cond.size() != 0) {
                 winElements.put(key, new ArrayList<>());
-                winElements.get(key).add(matrix_obj.getConfig().getWinCombinations().entrySet().stream().filter(entry -> entry.getValue().getCount() != null &&
-                        entry.getValue().getCount() == matrix_obj.getCount().get(key)).map(Map.Entry::getKey).collect(Collectors.toList()).get(0));
+                winElements.get(key).add(check_cond.get(0));
             }
         }
     }
